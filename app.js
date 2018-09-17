@@ -39,11 +39,11 @@ function runEvent(e) {
   //Assign className
   trashCan.className = "fas fa-trash";
 
-  //Append a to i
+  //Append trashCan to a
   a.appendChild(trashCan);
   //Append a to li
   li.appendChild(a);
-  //Append li to const list (const list is declared globally above)
+  //Append li to const list
   list.appendChild(li);
 
   //Function to save new tasks into local storage
@@ -64,28 +64,28 @@ let parsedArray = [];
 function saveDataLocally() {
   //Declare variable and assign it what is typed in the form)
   newTask = `${taskInput.value}`;
-  //Set newTask JSON to save in local storage
-  localStorage.setItem("JSON Task:", newTask);
+  console.log("JSON Task:", newTask);
 
   //Change newTask JSON to a string
   stringyObject = JSON.stringify(newTask);
-  //Set stringyObject to save in local storage
-  localStorage.setItem("stringyObject Task:", stringyObject);
+  console.log("stringyObject Task:", stringyObject);
 
   //Push latest input from form into array
   newTaskArray.push(`${taskInput.value}`);
-  //Set newTaskArray JSON to save in local storage
-  localStorage.setItem("JSON Array:", newTaskArray);
+  console.log("JSON Array:", newTaskArray);
 
   //Change JSON array to a string
   stringyObject = JSON.stringify(newTaskArray);
   //Set stringyObject to save in local storage
   localStorage.setItem("stringyObject Array:", stringyObject);
+  console.log("stringyObject Array:", stringyObject);
 
   //Parse stringyObject back to a JSON
   parsedArray = JSON.parse(localStorage.getItem("stringyObject Array:"));
   localStorage.setItem("Parsed Array:", parsedArray);
+  console.log("Parsed Array:", parsedArray);
 }
+
 /////////////////////////////////
 //DELETE A TASK
 ////////////////////////////////
@@ -100,30 +100,26 @@ bodyNode.addEventListener("click", eventHandler);
 function eventHandler(e) {
   //If trash can is clicked then remove task
   if (e.target.parentElement.className === "delete-item secondary-content") {
-    let s = document.getElementsByClassName("collection-item");
-
-    let v = document.getElementsByClassName("collection-item").innerHTML.value;
-    console.log(v);
     e.target.parentElement.parentElement.remove();
+    //Assignin let for Looping through array search for inner text of element
+    let index = parsedArray.indexOf(
+      e.target.parentElement.parentElement.innerText
+    );
 
-    var i = parsedArray.indexOf("a");
-    if (i > -1) {
-      parsedArray.splice(i, 1);
-    }
-    // array = [2, 9]
-    console.log(parsedArray);
-    //let x = document.getElementsByClassName("collection-item").innerHTML;
-    //console.log(x);
-    let f = document.getElementsByClassName("delete-item secondary-content");
-    //console.log(s.innerHTML);
-    /* var json = JSON.parse(localStorage["results"]);
-    for (i = 0; i < json.length; i++)
-      if (json[i].id == "item-3") json.splice(i, 1);
-    localStorage["results"] = JSON.stringify(json);
- */
-    //localStorage.removeItem("JSON Array");
-    //localStorage.removeItem("Parsed Array");
-    localStorage.splice;
+    //console.log(index);
+
+    //Splice the change into the array
+    parsedArray.splice(index, 1);
+
+    //console.log(parsedArray);
+
+    //Change JSON array to a string
+    let stringyObject = JSON.stringify(parsedArray);
+
+    //Set stringyObject to save in local storage
+    localStorage.setItem("stringyObject Array:", stringyObject);
+
+    e.preventDefault();
   }
 }
 
@@ -131,30 +127,17 @@ function eventHandler(e) {
 //DELETE ALL
 ////////////////////////////////
 
-/* 
-//Declare const globally and assign it to the Clear Button
+//Declare const globally and assign it to the Clear Tasks button
 const clearTaskButton = document.querySelector(".clear-tasks");
 
-//Registering EventListener
-clearTaskButton.addEventListener("click", eventHandlerDelete);
-
-//Function to delete all tasks
-function eventHandlerDelete() {
-  //Declare let and assign it to all li
-  let toDelete = document.querySelectorAll("li");
-  //Remove each element that is clicked
-  toDelete.forEach(function(element) {
-    element.remove();
-  });
-}
- */
-
-const clearTaskButton = document.querySelector(".clear-tasks");
-
+//Register EventListener
 clearTaskButton.addEventListener("click", function() {
   let toDelete = document.querySelectorAll("li");
+
+  //Loop through array to delete all data
   toDelete.forEach(function(element) {
     element.remove();
+    //Delete everything in local storage
     localStorage.clear();
   });
 });
