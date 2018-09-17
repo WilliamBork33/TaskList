@@ -24,10 +24,16 @@ function runEvent(e) {
   const li = document.createElement("li");
   //Setting class attributes for new created li
   li.setAttribute("class", "collection-item");
-  //Set li to have the typed input value from taskInput
-  li.innerHTML = `${
-    taskInput.value
-  }<a href="#" class="delete-item secondary-content">`;
+
+  //If statement if user enters an empty value
+  if (taskInput.value === "") {
+    li.innerHTML = `${"You Entered An Empty Value"}<a href="#" class="delete-item secondary-content">`;
+  } else {
+    //Set li to have the typed input value from taskInput
+    li.innerHTML = `${
+      taskInput.value
+    }<a href="#" class="delete-item secondary-content">`;
+  }
 
   //Declare const for delete buttons
   const a = document.createElement("a");
@@ -118,6 +124,8 @@ function eventHandler(e) {
 
     //Set stringyObject to save in local storage
     localStorage.setItem("stringyObject Array:", stringyObject);
+    //Set parsedArray to save in local storage
+    localStorage.setItem("Parsed Array:", parsedArray);
 
     e.preventDefault();
   }
@@ -161,12 +169,16 @@ function readStorage() {
       const li = document.createElement("li");
       //Setting class attributes for new created li
       li.setAttribute("class", "collection-item");
-      //Set li to have the values of the parsedArray
-      parsedArray.forEach(function(element) {
+
+      //If statement if user enters an empty value
+      if (taskInput.value === "") {
+        li.innerHTML = `${"You Entered An Empty Value"}<a href="#" class="delete-item secondary-content">`;
+      } else {
+        //Set li to have the typed input value from taskInput
         li.innerHTML = `${
-          parsedArray[i]
+          taskInput.value
         }<a href="#" class="delete-item secondary-content">`;
-      });
+      }
 
       //Declare const for delete buttons
       const a = document.createElement("a");

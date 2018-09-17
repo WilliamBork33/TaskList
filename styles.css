@@ -1,17 +1,25 @@
-/* body {
-  background-image: url("pokeballs.jpg");
+body {
+  background-image: url("images/pokeballs.jpg");
   background-size: 110%;
 }
 
+#main {
+  background-color: slategray;
+}
+#header-row {
+  height: 120px;
+  background-image: url("images/pokemon-logo-black-transparent.png");
+  background-position: 70%;
+  background-repeat: no-repeat;
+}
 .card-content {
   text-align: center;
   color: whitesmoke;
-  background-color: slategray;
+  background-color: whitesmoke;
 }
 
-#task,
-#task-label {
-  color: whitesmoke;
+.card-action {
+  text-align: center;
 }
 
 .collection-item {
@@ -19,8 +27,8 @@
   text-align: left;
   font-weight: 20;
 }
- */
 
-h1 {
+h4 {
   text-align: center;
+  color: white;
 }

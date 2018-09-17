@@ -20,28 +20,29 @@
             <div class="row">
                 <div class="col s12">
                     <div class="card" id="main">
+                        <br>
+                        <div class="row" id="header-row"></div>
 
                         <!-- Card -->
                         <div class="card-content">
-                            <span class="card-content">Task List
-                                <div class="row">
-                                    <form id="task-form">
-                                        <div class="input-field col s12">
-                                            <input type="text" name="task" id="task" value="">
-                                            <label for="task" id="task-label">New Task</label>
-                                        </div>
-                                        <input type="submit" value="Add Task" class="btn">
-                                    </form>
-                                </div>
-                            </span>
+                            <h5 id="task-title">New Pokemon</h5>
+                            <div class="row">
+                                <form id="task-form">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="task" id="task" value="">
+                                        <label for="task" id="new-task">New Task</label>
+                                    </div>
+                                    <input type="submit" value="Add PKMN" class="btn">
+                                </form>
+                            </div>
                         </div>
 
                         <!-- Card -->
                         <div class="card-action">
-                            <h5 id="task-title">Tasks</h5>
+                            <h5 id="task-title">Pokemon Caught</h5>
                             <div class="input-field .col .s12">
                                 <input type="text" name="task-filter" id="task-filter" value="">
-                                <label for="task" id="task-label">Filter Task</label>
+                                <label for="task" id="filter-task">Filter Task</label>
                                 <ul class="collection">
                                     <!-- DONT NEED BECAUSE WE ARE DYNAMICALLY BUIDLING WITH JAVASCRIPT<li class="collection-item">Delete This<a href="#" class="delete-item secondary-content"><i
                                                 class="fas fa-trash"></i></a></li> -->
@@ -49,7 +50,7 @@
 
                                 </ul>
                             </div>
-                            <a href="#" class="clear-tasks btn red">Clear Tasks</a>
+                            <a href="#" class="clear-tasks btn red">Clear PKMN</a>
                         </div>
 
                     </div>
