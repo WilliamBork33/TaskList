@@ -93,7 +93,7 @@ function saveDataLocally() {
 //Declare Const Globally
 const bodyNode = document.body;
 
-//Register EventListener
+//Register EventListner
 bodyNode.addEventListener("click", eventHandler);
 
 //eventHandler Function
@@ -170,7 +170,7 @@ function readStorage() {
   if (parsedArray == null) {
     console.log("Nothing here...");
   } else {
-    console.log("iterating");
+    //console.log("iterating");
     //For Loop to interate through local storage and uses
     //a nearly identical function as runEvent (which adds tasks to DOM)
     for (i = 0; i < localStorage.length; i++) {
@@ -213,69 +213,28 @@ readStorage();
 ////////////////////////////////
 
 //Declare Consts Globally
-//const filter = document.querySelector("input");
-const taskFilterInput = document.getElementById("task_filter");
-const filterHeading = document.querySelector("h5");
+const filterInput = document.getElementById("task-filter");
 
 //Register EventListners
-//form.addEventListener("submit", runEvent);
-taskFilterInput.addEventListener("keyup", onKey);
+filterInput.addEventListener("keyup", filter);
 
-filterHeading.innerHTML = e.target.value;
+//Function to filter task items
+function filter() {
+  //console.log(filterInput.value);
 
-console.log(filterHeading);
+  let elements = document.getElementsByClassName("collection-item");
+  //console.log(elements);
 
-/* 
+  elements = [].slice.call(elements);
+  //console.log(elements);
 
-
-//Declare Consts Globally
-const filter = document.querySelector("input");
-const taskFilterInput = document.getElementById("task_filter");
-//const heading = document.querySelector("h5");
-//const list = document.querySelector("ul.collection");
-
-//Register EventListners
-//form.addEventListener("submit", runEvent);
-taskFilterInput.addEventListener("keyup", onKey);
-
-//Function for when keys are pressed to type in form
-function onKey(e) {
-  //Displays keypresses in real-time
-  heading.innerHTML = e.target.value;
+  //Interating through array for items matching typed value
+  elements.forEach(element => {
+    if (element.innerText.indexOf(filterInput.value) > -1) {
+      //console.log(element.innerText.indexOf(filterInput.value) > -1);
+      element.style.display = "";
+    } else {
+      element.style.display = "none";
+    }
+  });
 }
-
-//Function for logic when SUBMIT BUTTON or ENTER is pressed
-function runFilter(e) {
-  console.log(heading);
-  //Declare const for new list item creation
-  const li = document.createElement("li");
-  //Setting class attributes for new created li
-  li.setAttribute("class", "collection-item");
-  //Set li to have the typed input value from taskInput
-  li.innerHTML = `${
-    taskInput.value
-  }<a href="#" class="delete-item secondary-content">`;
-
-  //Declare const for delete buttons
-  const a = document.createElement("a");
-  //Assign className & href
-  a.className = "delete-item secondary-content";
-  a.href = "#";
-  //Declare const for trash can
-  const trashCan = document.createElement("i");
-  //Assign className
-  trashCan.className = "fas fa-trash";
-
-  //Append a to i
-  a.appendChild(trashCan);
-  //Append a to li
-  li.appendChild(a);
-  //Append li to const list (const list is declared globally above)
-  list.appendChild(li);
-
-  //Function to save new tasks into local storage
-  saveDataLocally();
-
-  e.preventDefault();
-}
- */
