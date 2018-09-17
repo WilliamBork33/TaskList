@@ -156,7 +156,7 @@ function readStorage() {
     //console.log("iterating");
     //For Loop to interate through local storage and uses
     //a nearly identical function as runEvent (which adds tasks to DOM)
-    for (i = 0; i < localStorage.length; i++) {
+    for (i = 0; i < parsedArray.length; i++) {
       //Declare const for new list item creation
       const li = document.createElement("li");
       //Setting class attributes for new created li
