@@ -221,3 +221,9 @@ function filter() {
     }
   });
 }
+
+//TO DO
+
+//Add the time task is added.
+
+//Show alert about the time.
