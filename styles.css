@@ -1,0 +1,26 @@
+/* body {
+  background-image: url("pokeballs.jpg");
+  background-size: 110%;
+}
+
+.card-content {
+  text-align: center;
+  color: whitesmoke;
+  background-color: slategray;
+}
+
+#task,
+#task-label {
+  color: whitesmoke;
+}
+
+.collection-item {
+  color: black;
+  text-align: left;
+  font-weight: 20;
+}
+ */
+
+h1 {
+  text-align: center;
+}

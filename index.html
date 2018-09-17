@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Enroute Project 1</title>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+            crossorigin="anonymous">
+        <!-- Linking to internal stylesheet -->
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card" id="main">
+
+                        <!-- Card -->
+                        <div class="card-content">
+                            <span class="card-content">Task List
+                                <div class="row">
+                                    <form id="task-form">
+                                        <div class="input-field col s12">
+                                            <input type="text" name="task" id="task" value="">
+                                            <label for="task" id="task-label">New Task</label>
+                                        </div>
+                                        <input type="submit" value="Add Task" class="btn">
+                                    </form>
+                                </div>
+                            </span>
+                        </div>
+
+                        <!-- Card -->
+                        <div class="card-action">
+                            <h5 id="task-title">Tasks</h5>
+                            <div class="input-field .col .s12">
+                                <input type="text" name="task-filter" id="task-filter" value="">
+                                <label for="task" id="task-label">Filter Task</label>
+                                <ul class="collection">
+                                    <!-- DONT NEED BECAUSE WE ARE DYNAMICALLY BUIDLING WITH JAVASCRIPT<li class="collection-item">Delete This<a href="#" class="delete-item secondary-content"><i
+                                                class="fas fa-trash"></i></a></li> -->
+
+
+                                </ul>
+                            </div>
+                            <a href="#" class="clear-tasks btn red">Clear Tasks</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- JavaScript File -->
+    <script src='app.js'></script>
+    <!-- Materialize CDN - Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize CDN - Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</html>
