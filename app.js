@@ -236,6 +236,6 @@ function filter() {
 
 //TO DO
 
-//Add the time task is added.
+//Allow user to add a time or date to do the task.
 
-//Show alert about the time.
+//Show time or date task on the task element.
